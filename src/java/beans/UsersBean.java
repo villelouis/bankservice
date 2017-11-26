@@ -68,9 +68,6 @@ public class UsersBean implements Serializable {
 			utx.begin();
 			Users u = new Users();
 			u.setId(newU.getId());
-			if (newU.getDevicesId() != null) {
-				u.setDevices((Set<Devices>) em.find(Users.class, newU.getDevicesId()));
-			}
 			u.setLogin(newU.getLogin());
 			u.setPassword(newU.getPassword());
 			u.setMoney(newU.getMoney());

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"      
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <f:view>       
+        <h:body>
+            <ui:composition>
+                <form>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <b>Tables</b>
+                </form>
+                <h:form id="t_form">
+                    <h:button value="users" outcome="users"/>   
+                    <h:button value="devices" outcome="devices"/> 
+                </h:form>
+                <h:outputLabel>---------------------------------</h:outputLabel>
+                <h:form id="add_form">
+                    <h:button value="Add Entry" outcome="addentry"/>
+                </h:form>
+                <h:outputLabel>---------------------------------</h:outputLabel>
+            </ui:composition>
+        </h:body>
+    </f:view>
+</html>
+

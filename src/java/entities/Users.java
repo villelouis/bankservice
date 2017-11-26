@@ -28,8 +28,6 @@ public class Users implements Serializable {
 	private String			login;
 	private String			password;
 	private Long			money;
-	@OneToMany
-	private Set<Devices>	devices = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -61,14 +59,6 @@ public class Users implements Serializable {
 	
 	public void setMoney(Long money) {
 		this.money = money;
-	}
-
-	public Set<Devices> getDevices() {
-		return devices;
-	}
-	
-	public void setDevices(Set<Devices> devices) {
-		this.devices = devices;
 	}
 
 	public static long getSerialVersionUID() {

@@ -24,6 +24,7 @@ public class DevicesEditBean implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long		id;
 	private Long		phoneNum;
+	private Long		userId;
 
 	public Long getId() {
 		return id;
@@ -45,4 +46,11 @@ public class DevicesEditBean implements Serializable {
 		this.phoneNum = phoneNum;
 	}
 	
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 }

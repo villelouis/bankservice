@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view>
+        <h:head>
+            <title>Add Entry</title>
+        </h:head>
+        <h:body>     
+            <h:form>
+                <h:button value="Home" outcome="index"/>
+            </h:form>
+            <h:form id="create_user">
+                <h:messages id="m"/>
+                <h:panelGrid columns="2">
+                    ID: <h:inputText value="#{usersEditBean.id}"/>
+                    Login: <h:inputText value="#{usersEditBean.login}"/>
+                    Password: <h:inputText value="#{usersEditBean.password}"/>
+                    Money: <h:inputText value="#{usersEditBean.money}"/>
+                </h:panelGrid>
+                <h:commandButton value="Add Users Entry" actionListener="#{usersBean.createUsers(usersEditBean)}">
+                    <f:ajax execute="@form" render=":users_form"/>
+                </h:commandButton>                
+            </h:form>
+            <h:outputLabel>---------------------------------</h:outputLabel>
+            <h:form id="create_devices">
+                <h:messages id="m"/>
+                <h:panelGrid columns="2">
+                    ID: <h:inputText value="#{devicesEditBean.id}"/>
+                    Phone Number: <h:inputText value="#{devicesEditBean.phoneNum}"/>
+                    User ID: <h:inputText value="#{devicesEditBean.userId}"/>
+                </h:panelGrid>
+                <h:commandButton value="Add Deivices Entry" actionListener="#{devicesBean.createDevices(devicesEditBean)}">
+                    <f:ajax execute="@form" render=":dev_form"/>
+                </h:commandButton>                
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

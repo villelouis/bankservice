@@ -67,6 +67,7 @@ public class DevicesBean implements Serializable {
 			Devices d = new Devices();
 			d.setId(newD.getId());
 			d.setPhoneNum(newD.getPhoneNum());
+			d.setUserId(newD.getUserId());
 			if(d != null) {
 				em.persist(d);
 			}

@@ -30,8 +30,6 @@ public class UsersEditBean implements Serializable {
 	private String			login;
 	private String			password;
 	private Long			money;
-	@OneToMany
-	private Set<Long>		devicesId = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -63,14 +61,6 @@ public class UsersEditBean implements Serializable {
 	
 	public void setMoney(Long money) {
 		this.money = money;
-	}
-
-	public Set<Long> getDevicesId() {
-		return devicesId;
-	}
-	
-	public void setDevices(Set<Long> devicesId) {
-		this.devicesId = devicesId;
 	}
 
 	public static long getSerialVersionUID() {
