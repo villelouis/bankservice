@@ -1,6 +1,7 @@
 package beans;
 
 import entities.Devices;
+import entities.Users;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.Resource;
@@ -19,7 +20,7 @@ import javax.transaction.UserTransaction;
 @ManagedBean
 @ViewScoped
 public class DevicesBean implements Serializable {
-	
+
 	@PersistenceContext
 	private EntityManager em;
 	@Resource
@@ -67,7 +68,12 @@ public class DevicesBean implements Serializable {
 			Devices d = new Devices();
 			d.setId(newD.getId());
 			d.setPhoneNum(newD.getPhoneNum());
-			d.setUserId(newD.getUserId());
+			if (em.createQuery("select d.phoneNum from Devices d", Devices.class)
+					.getResultList().contains(newD.getPhoneNum()))
+				return;
+			d.setUser(em.find(Users.class, newD.getUserId()));
+			if (d.getUser() == null)
+				return;
 			if(d != null) {
 				em.persist(d);
 			}

@@ -30,7 +30,7 @@ and open the template in the editor.
                         <tr>
                             <td>| #{d.id}</td>
                             <td>| #{d.phoneNum}</td>
-                            <td>| #{d.userId}</td>
+                            <td>| #{d.user.id}</td>
                             <td>|
                                 <h:commandButton id="hello" value="Delete" actionListener="#{devicesBean.deleteDevices(d.id)}">
                                     <f:ajax execute="@this" render=":dev_form"/>

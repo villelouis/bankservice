@@ -18,16 +18,20 @@ import javax.persistence.*;
  *
  * @author Александр
  */
-@Entity @Table(name="Users")
+@Entity @Table(name="Users", uniqueConstraints={@UniqueConstraint(columnNames={"login"})})
 public class Users implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long			id;
+	@Column(name="login", nullable=false)
 	private String			login;
+	@Column(nullable = false)
 	private String			password;
 	private Long			money;
+	@OneToMany(mappedBy = "user", cascade = javax.persistence.CascadeType.REMOVE)
+	private List<Devices>	devices;
 
 	public Long getId() {
 		return id;
@@ -61,6 +65,14 @@ public class Users implements Serializable {
 		this.money = money;
 	}
 
+	public List<Devices> getDevices() {
+		return devices;
+	}
+
+	public void setDevices(List<Devices> devices) {
+		this.devices = devices;
+	}
+	
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}

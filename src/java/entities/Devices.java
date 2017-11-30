@@ -16,15 +16,19 @@ import javax.persistence.*;
  *
  * @author Александр
  */
-@Entity @Table(name="Devices")
+@Entity
+@Table(name="Devices", uniqueConstraints={@UniqueConstraint(columnNames={"phoneNum"})})
 public class Devices implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long		id;
+	@Column(name="phoneNum", nullable = false)
 	private Long		phoneNum;
-	private Long		userId;
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="userId")
+	private Users		user;
 
 	public Long getId() {
 		return id;
@@ -46,15 +50,14 @@ public class Devices implements Serializable {
 		this.phoneNum = phoneNum;
 	}
 
-	public Long getUserId() {
-		return userId;
+	public Users getUser() {
+		return user;
 	}
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
+	public void setUser(Users user) {
+		this.user = user;
 	}
 	
-
 	@Override
 	public int hashCode() {
 		int hash = 0;

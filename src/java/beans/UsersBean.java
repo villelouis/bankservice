@@ -69,6 +69,9 @@ public class UsersBean implements Serializable {
 			Users u = new Users();
 			u.setId(newU.getId());
 			u.setLogin(newU.getLogin());
+			if (em.createQuery("select u.login from Users u", Users.class)
+					.getResultList().contains(newU.getLogin()))
+				return;
 			u.setPassword(newU.getPassword());
 			u.setMoney(newU.getMoney());
 			if(u != null) {
