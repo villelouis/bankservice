@@ -30,6 +30,7 @@ public class UsersEditBean implements Serializable {
 	private String			login;
 	private String			password;
 	private Long			money;
+	private String			serialNum;
 
 	public Long getId() {
 		return id;
@@ -61,6 +62,14 @@ public class UsersEditBean implements Serializable {
 	
 	public void setMoney(Long money) {
 		this.money = money;
+	}
+	
+	public String getSerialNum() {
+		return serialNum;
+	}
+
+	public void setSerialNum(String serialNum) {
+		this.serialNum = serialNum;
 	}
 
 	public static long getSerialVersionUID() {
