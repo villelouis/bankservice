@@ -32,7 +32,7 @@ public class Users implements Serializable {
 	private Long			money;
 	@OneToMany(mappedBy = "user", cascade = javax.persistence.CascadeType.REMOVE)
 	private List<Devices>	devices;
-	private String			serialNum;
+	private String			sertificate;
 
 	public Long getId() {
 		return id;
@@ -74,12 +74,12 @@ public class Users implements Serializable {
 		this.devices = devices;
 	}
 
-	public String getSerialNum() {
-		return serialNum;
+	public String getSertificate() {
+		return sertificate;
 	}
 
-	public void setSerialNum(String serialNum) {
-		this.serialNum = serialNum;
+	public void setSertificate(String sertificate) {
+		this.sertificate = sertificate;
 	}
 	
 	public static long getSerialVersionUID() {

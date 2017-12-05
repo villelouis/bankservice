@@ -30,7 +30,7 @@ public class UsersEditBean implements Serializable {
 	private String			login;
 	private String			password;
 	private Long			money;
-	private String			serialNum;
+	private String			sertificate;
 
 	public Long getId() {
 		return id;
@@ -64,14 +64,14 @@ public class UsersEditBean implements Serializable {
 		this.money = money;
 	}
 	
-	public String getSerialNum() {
-		return serialNum;
+	public String getSertificate() {
+		return sertificate;
 	}
 
-	public void setSerialNum(String serialNum) {
-		this.serialNum = serialNum;
+	public void setSertificate(String sertificate) {
+		this.sertificate = sertificate;
 	}
-
+	
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}

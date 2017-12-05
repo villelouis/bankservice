@@ -74,7 +74,7 @@ public class UsersBean implements Serializable {
 				return;
 			u.setPassword(newU.getPassword());
 			u.setMoney(newU.getMoney());
-			u.setSerialNum(newU.getSerialNum());
+			u.setSertificate(newU.getSertificate());
 			if(u != null) {
 				em.persist(u);
 			}
